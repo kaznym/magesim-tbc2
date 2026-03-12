@@ -1825,6 +1825,7 @@ public:
     double buffDmgMultiplier(shared_ptr<spell::Spell> spell)
     {
         double multi = 1;
+        double additive = 1;
 
         if (config->imp_sanctity)
             multi*= 1.02;
@@ -1835,26 +1836,27 @@ public:
             multi*= 1 + (player->talents.arcane_instability * 0.01);
         if (player->talents.playing_with_fire)
             multi*= 1 + (player->talents.playing_with_fire * 0.01);
-        if (player->talents.piercing_ice && spell->school == SCHOOL_FROST)
-            multi*= 1 + (player->talents.piercing_ice * 0.02);
         if (player->talents.arctic_winds && spell->school == SCHOOL_FROST)
             multi*= 1 + (player->talents.arctic_winds * 0.01);
-        if (player->talents.fire_power && spell->school == SCHOOL_FIRE)
-            multi*= 1 + (player->talents.fire_power * 0.02);
         // Below 20% - We'll estimate that to last 20% of duration
         if (player->talents.molten_fury && state->t / state->duration >= 0.8)
             multi*= 1 + (player->talents.molten_fury * 0.1);
 
+
+        // Additive category
+        if (player->talents.fire_power && spell->school == SCHOOL_FIRE)
+            additive+= player->talents.fire_power * 0.02;
+        if (player->talents.piercing_ice && spell->school == SCHOOL_FROST)
+            additive+= player->talents.piercing_ice * 0.02;
+
         if (state->hasBuff(buff::ARCANE_POWER) && !spell->proc)
-            multi*= 1.3;
-
+            additive+= 0.3;
         if (spell->id == spell::ARCANE_BLAST && config->tirisfal_2set)
-            multi*= 1.2;
-
+            additive+= 0.2;
         if ((spell->id == spell::ARCANE_MISSILES || spell->id == spell::FROSTBOLT || spell->id == spell::FIREBALL) && config->tempest_4set)
-            multi*= 1.05;
+            additive+= 0.05;
 
-        return multi;
+        return multi * additive;
     }
 
     double debuffDmgMultiplier(shared_ptr<spell::Spell> spell)

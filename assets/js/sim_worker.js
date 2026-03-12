@@ -18,7 +18,6 @@ onmessage = (event) => {
         const wasm = fetch("./magesim.wasm", {cache: "no-store"})
         .then(r => r.arrayBuffer())
         .then(binary => MageSim({wasmBinary: binary}))
-        .then(w => w.ready)
         .then(m => {
             var config = m.allocConfig();
             for (var key in data.config) {
