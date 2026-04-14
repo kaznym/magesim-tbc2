@@ -1597,11 +1597,11 @@
             var splitview = localStorage.getItem("splitview") == "true" ? true : false;
 
             var default_config = {
-                iterations: 30000,
+                iterations: 50000,
                 race: 5,
-                shatt_faction: 0,
+                shatt_faction: 1,
 
-                duration: 180,
+                duration: 120,
                 duration_variance: 0,
                 rng_seed: 0,
                 gcd_unlocked: false,
@@ -1615,7 +1615,7 @@
                 judgement_of_the_crusader: false,
                 judgement_of_wisdom: true,
                 vampiric_touch: true,
-                vampiric_touch_regen: 40,
+                vampiric_touch_regen: 50,
 
                 totem_of_wrath: true,
                 wrath_of_air: true,
@@ -1623,7 +1623,7 @@
                 improved_mana_spring: false,
                 arcane_intellect: true,
                 divine_spirit: true,
-                improved_divine_spirit: false,
+                improved_divine_spirit: true,
                 blessing_of_kings: true,
                 blessing_of_wisdom: true,
                 mark_of_the_wild: true,
@@ -1637,13 +1637,13 @@
                 imp_sanctity: false,
                 ferocious_inspiration: 0,
 
-                food: 0,
+                food: 1,
                 flask: 0,
-                battle_elixir: 0,
-                guardian_elixir: 0,
-                weapon_oil: 0,
-                drums: 0,
-                drums_friend: false,
+                battle_elixir: 1,
+                guardian_elixir: 1,
+                weapon_oil: 1,
+                drums: 1,
+                drums_friend: true,
                 potion: 22832,
                 first_potion: 0,
                 conjured: 22044,
@@ -1653,7 +1653,7 @@
                 chain_of_the_twilight_owl: false,
                 jade_pendant_of_blasting: false,
                 scroll_of_spirit: false,
-                kreegs: false,
+                kreegs: true,
                 bloodthistle: false,
                 scourgebane: false,
 
@@ -1676,7 +1676,7 @@
                 trinket2: 0,
 
                 innervate: 0,
-                mana_tide: true,
+                mana_tide: false,
                 bloodlust: true,
                 power_infusion: false,
                 symbol_of_hope: false,
