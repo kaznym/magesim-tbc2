@@ -1,7 +1,7 @@
 struct Config
 {
 
-    int duration = 200;
+    int duration = 120;
     double duration_variance = 1.5;
     int rng_seed = 0;
     bool gcd_unlocked = false;
@@ -23,7 +23,7 @@ struct Config
     bool improved_mana_spring = false;
     bool arcane_intellect = true;
     bool divine_spirit = true;
-    bool improved_divine_spirit = false;
+    bool improved_divine_spirit = true;
     bool blessing_of_kings = true;
     bool blessing_of_wisdom = true;
     bool mark_of_the_wild = true;
@@ -41,7 +41,7 @@ struct Config
     bool chain_of_the_twilight_owl = false;
     bool jade_pendant_of_blasting = false;
     bool scroll_of_spirit = false;
-    bool kreegs = false;
+    bool kreegs = true;
     bool bloodthistle = false;
     bool scourgebane = false;
     bool imp_sanctity = false;
