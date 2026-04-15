@@ -284,6 +284,7 @@ var equip = {
         { id: 32655, title: "Crystalweave Bracers", int: 16, sp: 23, crit: 12, sockets: ["r"], bonus: { sp: 2 }, phase: 2 },
         { id: 24250, title: "Bracers of Havok", int: 12, sp: 30, sockets: ["y"], bonus: { crit: 2 }, q: "rare" },
         { id: 32811, title: "Veteran's Dreadweave Cuffs", int: 16, sp: 25, sockets: ["y"], bonus: { sp: 2 }, phase: 2 },
+        { id: 30684, title: "Ravager's Cuffs of the Invoker", int: 21, sp: 25, crit: 21},
         { id: 28515, title: "Bands of Nefarious Deeds", int: 22, sp: 32 },
         { id: 27462, title: "Crimson Bracers of Gloom", int: 18, sp: 22, hit: 12, q: "rare" },
         { id: 29240, title: "Bands of Negation", int: 22, sp: 29 },
