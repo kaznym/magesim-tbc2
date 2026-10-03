@@ -1,5 +1,3 @@
-#ifdef __EMSCRIPTEN__
-
 #include <emscripten.h>
 #include <emscripten/bind.h>
 
@@ -91,6 +89,7 @@ EMSCRIPTEN_BINDINGS(my_module) {
         .value("TRINKET_NEXUS_HORN", TRINKET_NEXUS_HORN)
         .value("TRINKET_BURST_OF_KNOWLEDGE", TRINKET_BURST_OF_KNOWLEDGE)
         .value("TRINKET_SMOKING_PIPE", TRINKET_SMOKING_PIPE)
+        .value("TRINKET_SMOKING_PIPE_TBC_ANNI", TRINKET_SMOKING_PIPE_TBC_ANNI)
         .value("TRINKET_TIMBALS_FOCUSING_CRYSTAL", TRINKET_TIMBALS_FOCUSING_CRYSTAL)
         ;
 
@@ -324,5 +323,3 @@ EMSCRIPTEN_BINDINGS(my_module) {
     emscripten::function("runSimulation", &runSimulation);
     emscripten::function("runSimulations", &runSimulations);
 }
-
-#endif

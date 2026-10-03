@@ -1,6 +1,8 @@
+import Worker from "./sim_worker.js?worker";
+
 class SimulationWorker {
     constructor(onSuccess, onError) {
-        this.worker = new Worker("./dist/js/sim_worker.js?"+Math.random());
+        this.worker = new Worker();
 
         this.worker.onerror = (...args) => {
             onError(...args);
@@ -18,6 +20,7 @@ class SimulationWorker {
     }
 
     start(config, iterations) {
+        config = _.cloneDeep(config);
         this.worker.postMessage({
             type: "start",
             config: config,
